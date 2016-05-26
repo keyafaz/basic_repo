@@ -1,0 +1,258 @@
+cd
+
+Keya@Keya-PC MINGW64 ~
+$ cd
+
+Keya@Keya-PC MINGW64 ~
+$ pwd
+/c/Users/Keya
+
+Keya@Keya-PC MINGW64 ~
+$ cd desktop
+
+Keya@Keya-PC MINGW64 ~/desktop
+$ cd "coding dojo"
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo
+$ cd "terminal and git"
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git (master)
+$ mkdir basic_repo
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git (master)
+$ cd basic_repo
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ pwd
+/c/Users/Keya/desktop/coding dojo/terminal and git/basic_repo
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ get init
+bash: get: command not found
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git init
+Initialized empty Git repository in C:/Users/Keya/Desktop/coding dojo/terminal and git/basic_repo/.git/
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ touch index.html
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ touch style.css
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        index.html
+        style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git add .
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   index.html
+        new file:   style.css
+
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git commit m- "added original paragraph and h1 style"
+error: pathspec 'm-' did not match any file(s) known to git.
+error: pathspec 'added original paragraph and h1 style' did not match any file(s) known to git.
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git commit -m "added originial p and h1 and added style to h1"
+[master (root-commit) 7742abf] added originial p and h1 and added style to h1
+ 2 files changed, 16 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 style.css
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git log
+commit 7742abffb31b9a9ce939bd29270927538f320353
+Author: Keya Fazelinia <kfazelinia@gmail.com>
+Date:   Thu May 26 13:22:54 2016 -0500
+
+    added originial p and h1 and added style to h1
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git remote add origin https://github.com/keyafaz/basic_repo.git
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git push -u origin master
+
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 468 bytes | 0 bytes/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/keyafaz/basic_repo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git branch
+* master
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git checkout -b updated-files
+Switched to a new branch 'updated-files'
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (updated-files)
+$ git branch
+  master
+* updated-files
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (updated-files)
+$ git add .
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (updated-files)
+$ git commit -m "added second paragraph"
+[updated-files 5a4b953] added second paragraph
+ 1 file changed, 1 insertion(+)
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (updated-files)
+$ git status
+On branch updated-files
+nothing to commit, working directory clean
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (updated-files)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git branch
+* master
+  updated-files
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git merge updated-files
+Updating 7742abf..5a4b953
+Fast-forward
+ index.html | 1 +
+ 1 file changed, 1 insertion(+)
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git log
+commit 5a4b95358a6f30d77e6a8b25a66bca3a5c20198e
+Author: Keya Fazelinia <kfazelinia@gmail.com>
+Date:   Thu May 26 13:30:49 2016 -0500
+
+    added second paragraph
+
+commit 7742abffb31b9a9ce939bd29270927538f320353
+Author: Keya Fazelinia <kfazelinia@gmail.com>
+Date:   Thu May 26 13:22:54 2016 -0500
+
+    added originial p and h1 and added style to h1
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git push origin
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 405 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/keyafaz/basic_repo.git
+   7742abf..5a4b953  master -> master
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git checkout -b third_branch
+Switched to a new branch 'third_branch'
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (third_branch)
+$ git branch
+  master
+* third_branch
+  updated-files
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (third_branch)
+$ git status
+On branch third_branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+        modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (third_branch)
+$ git add .
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (third_branch)
+$ git commit -m "added sencond paragraph for third branch"
+[third_branch 099badc] added sencond paragraph for third branch
+ 2 files changed, 6 insertions(+)
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (third_branch)
+$ git push orgin
+fatal: 'orgin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (third_branch)
+$ git push origin
+fatal: The current branch third_branch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin third_branch
+
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (third_branch)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up-to-date with 'origin/master'.
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git merge third_branch
+Updating 5a4b953..099badc
+Fast-forward
+ index.html | 2 ++
+ style.css  | 4 ++++
+ 2 files changed, 6 insertions(+)
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git branc
+git branch
+git: 'branc' is not a git command. See 'git --help'.
+
+Keya@Keya-PC MINGW64 ~/desktop/coding dojo/terminal and git/basic_repo (master)
+$ git branch
+* master
+  third_branch
+  updated-files
